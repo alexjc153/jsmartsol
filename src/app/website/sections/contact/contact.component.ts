@@ -1,6 +1,6 @@
 import { SendEmailService } from './../../services/send-email.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 import Swal from 'sweetalert2';
 
@@ -10,13 +10,13 @@ import Swal from 'sweetalert2';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   buttonText = 'Enviar';
   isSending = false;
   statusCreate: 'loading' | 'success' | 'error' | 'init' = 'init';
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private sendEmailService: SendEmailService
   ) {
     this.buildForm();
