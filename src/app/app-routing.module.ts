@@ -12,6 +12,14 @@ const routes: Routes = [
     },
   },
   {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+    data: {
+      preload: true,
+    },
+  },
+  {
     path: '**',
     component: PageNotFoundComponent,
   },
@@ -19,6 +27,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

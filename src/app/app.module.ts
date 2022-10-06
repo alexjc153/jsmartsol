@@ -1,6 +1,8 @@
+import { AdminModule } from './admin/admin.module';
 import { WebsiteModule } from './website/website.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,8 +14,10 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
   declarations: [AppComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     WebsiteModule,
+    AdminModule,
     HttpClientModule,
     SweetAlert2Module.forRoot(),
   ],

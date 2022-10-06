@@ -37,9 +37,9 @@
             </a>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav navigation">
               <li class="nav-item" *ngFor="let item of menu">
-                <a class="nav-link" [href]="item.href">{{ item.name }} </a>
+                <a class="nav-link" [name]="item.id" [ngClass]="{'active': isSelected}" (click)="scrollToSection(item.id, $event)">{{ item.name }} </a>
               </li>
               <!-- <li class="nav-item">
                 <a href="">Portal de Clientes</a>
